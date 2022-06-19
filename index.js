@@ -4,10 +4,11 @@ const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
 
-const Employee = require("../lib/Employee.js");
+// const Employee = require("../lib/Employee.js"); 
 const Engineer = require("../lib/Engineer.js");
 const Intern = require("../lib/Intern.js");
 const Manager = require("../lib/Manager.js");
+const { create } = require("domain");
 
 
 
@@ -77,9 +78,10 @@ function managerPrompt() {
     console.log (answers);
     const teamManager = new Manager(answers.nameAdded, answers.idAdded, answers.emailAdded, answers.officeNumberAdded);
     team.push(teamManager);
-    appMenu();
+    createTeamMember();
   })
 }
+//----------------------------------------------------------------
 
 // create a create a team function that prompts for the type of team member and then to get their information // 
 
@@ -98,37 +100,49 @@ createTeamMember () {
   .then(teamMember => {
     switch (teamMember.teamMemberType) {
      
-      case 'intern': addIntern()
+      case 'intern': internPrompt();
       break;
-      case 'engineer': addEngineer();
+      case 'engineer': engineerPrompt();
       break;
     }
-  });
+  })
 
 }
 
-addIntern() 
+internPrompt() {
+
 inquirer.prompt([
+
 {
   type: 'input',
   name: 'internName',
   message: ' What is the name of the intern?',
-  validate: answer => { if (answer !== "") { return true;}
-  else { return "please enter a name";
-  }
+  validate: (nameAdded) => {
+    if (nameAdded) {
+      return true;
+    } else {
+      console.log("Please add a name to the team intern prompt!");
+      return false;
+    }
+  },
+  
 },
-])
 
 {
   type: 'input',
   name: 'internSchool',
   message: 'What is the name of the school for this intern?',
-  validate: answer => { if (answer !== "") {return true;}
-else {
-   return "please enter a school!";}
+  validate: (schoolAdded) => {
+    if (schoolAdded) {
+      return true;
+    } else {
+      console.log("Please add a school name to the team intern prompt!");
+      return false;
+    }
+  },
 }
+])
 }
-
 
 
 managerPrompt();
