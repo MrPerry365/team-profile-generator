@@ -50,12 +50,12 @@ async function enterAnother() {
       //display to cards
       var writeString = "";
       for(let i = 0; i < team.length; i++) {
-        // $("#card-list").append(teams[i].writeEmployeeCard());
-        writeString += team[i].writeEmployeeCard();
+        // $("#card-list").append(team[i].writeEmployeeCard());
+       writeString += team[i].writeEmployeeCard();
       }
       writeString = "<html><body>" + writeString + "</body></html>"; 
       console.log(writeString);
-      fs.writeFile("test.html", writeString, function(err) {
+      fs.writeFile("team.html", writeString, function(err) {
         if(err) {
           return console.log(err);
         }
@@ -226,102 +226,4 @@ main();
 
 
 
-// .then (answers => {
-//     console.log (answers);
-//     const teamManager = new Manager(answers.nameAdded, answers.idAdded, answers.emailAdded, answers.officeNumberAdded);
-//     team.push(teamManager);
-//     createTeamMember();
-//   })
 
-// prompt for manager office number //
-
-//     function managerPrompt() {
-//       return inquirer.prompt([
-
-//     {
-//       type: "input",
-//       name: "officeNumber_prompt",
-//       message: "What is the office number of the team manager?",
-//       validate: (officeNumberAdded) => {
-//         if (officeNumberAdded) {
-//           return true;
-//         } else {
-//           console.log("Please add an office number to the manager prompt!");
-//           return false;
-//         }
-//       },
-//     },
-
-//     // use the answers to create a team manager //
-
-//   ])
-//   .then (answers => {
-//     console.log (answers);
-//     const teamManager = new Manager(answers.nameAdded, answers.idAdded, answers.emailAdded, answers.officeNumberAdded);
-//     team.push(teamManager);
-//     createTeamMember();
-//   })
-// }
-// //----------------------------------------------------------------
-
-// // create a create a team function that prompts for the type of team member and then to get their information //
-
-// createTeamMember () {
-//   inquirer.prompt([
-
-//     {
-//       type: 'list',
-//       name: ' teamMemberType',
-//       message: 'What type of team member would you like to create?',
-//       choices: ['intern', 'engineer',]
-//     }
-
-//   ])
-//   .then(teamMember => {
-//     switch (teamMember.teamMemberType) {
-
-//       case 'intern': internPrompt();
-//       break;
-//       case 'engineer': engineerPrompt();
-//       break;
-//     }
-//   })
-
-// }
-
-// internPrompt() {
-
-// inquirer.prompt([
-
-// {
-//   type: 'input',
-//   name: 'internName',
-//   message: ' What is the name of the intern?',
-//   validate: (nameAdded) => {
-//     if (nameAdded) {
-//       return true;
-//     } else {
-//       console.log("Please add a name to the team intern prompt!");
-//       return false;
-//     }
-//   },
-
-// },
-
-// {
-//   type: 'input',
-//   name: 'internSchool',
-//   message: 'What is the name of the school for this intern?',
-//   validate: (schoolAdded) => {
-//     if (schoolAdded) {
-//       return true;
-//     } else {
-//       console.log("Please add a school name to the team intern prompt!");
-//       return false;
-//     }
-//   },
-// }
-// ])
-// }
-
-// managerPrompt();
