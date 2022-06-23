@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
-
+const { create } = require("domain");
+const { info } = require("console");
 // use fs.writeFile() or fs.appendFile() ...?
 const fs = require("fs");
 const path = require("path");
@@ -8,10 +9,15 @@ const Employee = require("./lib/Employee.js");
 const Engineer = require("./lib/Engineer.js");
 const Intern = require("./lib/Intern.js");
 const Manager = require("./lib/Manager.js");
-const { create } = require("domain");
-const { info } = require("console");
+const {generateHtmlLayout} = require("./utils/htmlHelpers.js");
 const team = [];
 
+// const manager = new Manager("jeff", "1", "jeff@aol.com", "112");
+// team.push(manager);
+// const engineer = new Engineer("joe", "2", "joe@aol.com", "joe@github.com");
+// team.push(engineer);
+// const intern = new Intern("jane", "45", "jane@aol.com", "harvard");
+// team.push(intern);
 
 
 const main = async () => {
@@ -46,16 +52,12 @@ async function enterAnother() {
       employeePrompt("Intern");
       doCreate = true;
     } else {  // 'No' option - do not create more employees, create HTML file displaying team info
-      console.log(team);
+      // console.log(team);
       //display to cards
-      var writeString = "";
-      for(let i = 0; i < team.length; i++) {
-        // $("#card-list").append(team[i].writeEmployeeCard());
-       writeString += team[i].writeEmployeeCard();
-      }
-      writeString = "<html><body>" + writeString + "</body></html>"; 
-      console.log(writeString);
-      fs.writeFile("team.html", writeString, function(err) {
+      const htmlString = generateHtmlLayout(team); 
+      
+console.log(htmlString);
+      fs.writeFile("team.html", htmlString, function(err) {
         if(err) {
           return console.log(err);
         }
@@ -113,7 +115,7 @@ async function employeePrompt(role) {
       },
     ])
     .then((answers) => {
-      //console.log("Employee: " + answers.name_prompt + ", id: " + answers.id_prompt + ", email = " + answers.email_prompt);
+      //console.log("Employee: " + answers.name_prompt + ", id: " + answers.id_prompt + ", email: " + answers.email_prompt);
       if (role === "Manager") {
       managerPrompt(
           answers.name_prompt,
