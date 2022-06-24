@@ -10,11 +10,11 @@ function writeEngineerCard(employee) {
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item text-center text-center">${employee.id}</li>
-    <a href="${employee.email}" class="card-link text-center">${employee.email}</a>        
+    <a href= mailto:${employee.email}" class="card-link text-center">${employee.email}</a>        
   </ul>
   <div class="card-body text-center">
    
-    <a href="#" class="card-link">${employee.github}</a>
+    <a href= "https://github.com/${employee.github} class="card-link">${employee.github}</a>
   </div>
 </div>
   `;
@@ -31,7 +31,7 @@ return `
 </div>
 <ul class="list-group list-group-flush">
   <li class="list-group-item text-center text-center">${employee.id}</li>
-  <a href="https://MyTeam@gmail.com" class="card-link text-center">${employee.email}</a>
+  <a href= mailto:${employee.email} class="card-link text-center">${employee.email}</a>
 
 </ul>
 <div class="card-body text-center">
@@ -53,7 +53,7 @@ return`
 </div>
 <ul class="list-group list-group-flush">
   <li class="list-group-item text-center text-center">${employee.id}</li>
-  <a href="https://MyTeam@gmail.com" class="card-link text-center">${employee.email}</a>
+  <a href="mailto:${employee.email}" class="card-link text-center">${employee.email}</a>
 
 </ul>
 <div class="list-group-item text-center">${employee.officeNumber}</li>
