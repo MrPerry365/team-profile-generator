@@ -3,18 +3,18 @@ function writeEngineerCard(employee) {
 
   return `
   
-  <div class="card"  id="engineerCard" style="width: 18rem;">
-  <div class="card-body our. text-bg-danger mb-3">
+  <div class="card mx-4 mt-4" id="engineerCard" style="width: 18rem;">
+  <div class="card-body our. text-bg-info mb-3">
     <h5 class="card-title text-center fw-bold .fs-1">${employee.name}</h5>
     <p class="card-text text-center .fs-2 bi bi-wrench-adjustable">Engineer</p>
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item text-center text-center">${employee.id}</li>
-    <a href= mailto:${employee.email}" class="card-link text-center">${employee.email}</a>        
+    <a href= mailto:${employee.email} class="card-link text-center">${employee.email}</a>        
   </ul>
   <div class="card-body text-center">
    
-    <a href= "https://github.com/${employee.github} class="card-link">${employee.github}</a>
+    <a href= "https://github.com/${employee.github}" class="card-link">${employee.github}</a>
   </div>
 </div>
   `;
@@ -24,8 +24,8 @@ function writeInternCard(employee) {
 console.log(employee);
 
 return `
-<div class="card" id="internCard" style="width: 18rem;">
-<div class="card-body our. text-bg-danger mb-3">
+<div class="card mx-4 mt-4" id="internCard" style="width: 18rem;">
+<div class="card-body our. text-bg-info mb-3">
   <h5 class="card-title text-center fw-bold .fs-1">${employee.name}</h5>
   <p class="card-text text-center .fs-2 bi bi-person-rolodex">Intern</p>
 </div>
@@ -46,8 +46,8 @@ function writeManagerCard(employee) {
 console.log(employee);
 
 return`
-<div class="card" id="managerCard"style="width: 18rem;">
-<div class="card-body our. text-bg-danger mb-3">
+<div class="card mx-4 mt-4" id="managerCard"style="width: 18rem;">
+<div class="card-body our. text-bg-info mb-3">
   <h5 class="card-title text-center fw-bold .fs-1">${employee.name}</h5>
   <p class="card-text text-center .fs-2 bi bi-diagram-3">Manager</p>
 </div>
@@ -84,7 +84,7 @@ function generateHtmlLayout(team) {
 
     writeString += cardHtml;
   }
-  // console.log(writeString);
+  console.log(writeString);
   return `
   <!DOCTYPE html>
   <html lang="en">
@@ -102,15 +102,22 @@ function generateHtmlLayout(team) {
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
       />
-      <title>Document</title>
+      <title>My Team</title>
     </head>
     <body>
+    <header our. text-bg-danger mb-3>
+    <h1 class="our. text-bg-danger mb-3 text-center">My Team</h1>
+    </header>
+    <div class="container">
+        <div class="row justify-content-center">
       <div id="mainDiv">
         <ul class="list-group-item" id="card-list"></ul>
+       </div> 
+    ${writeString}
+     
+      </div> 
       </div> 
   
-    ${writeString}
-      
 
       <script
         src="https://code.jquery.com/jquery-3.6.0.js"
