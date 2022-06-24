@@ -5,16 +5,16 @@ function writeEngineerCard(employee) {
   
   <div class="card mx-4 mt-4" id="engineerCard" style="width: 18rem;">
   <div class="card-body our. text-bg-info mb-3">
-    <h5 class="card-title text-center fw-bold .fs-1">${employee.name}</h5>
+    <h5 class="card-title text-center fw-bold .fs-1">Name: ${employee.name}</h5>
     <p class="card-text text-center .fs-2 bi bi-wrench-adjustable">Engineer</p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item text-center text-center">${employee.id}</li>
-    <a href= mailto:${employee.email} class="card-link text-center">${employee.email}</a>        
+    <li class="list-group-item text-center text-center">ID: ${employee.id}</li>
+    <a href= mailto:${employee.email} class="card-link text-center">Email: ${employee.email}</a>        
   </ul>
   <div class="card-body text-center">
    
-    <a href= "https://github.com/${employee.github}" class="card-link">${employee.github}</a>
+    <a href= "https://github.com/${employee.github}" class="card-link">Github: ${employee.github}</a>
   </div>
 </div>
   `;
@@ -26,17 +26,17 @@ console.log(employee);
 return `
 <div class="card mx-4 mt-4" id="internCard" style="width: 18rem;">
 <div class="card-body our. text-bg-info mb-3">
-  <h5 class="card-title text-center fw-bold .fs-1">${employee.name}</h5>
+  <h5 class="card-title text-center fw-bold .fs-1">Name: ${employee.name}</h5>
   <p class="card-text text-center .fs-2 bi bi-person-rolodex">Intern</p>
 </div>
 <ul class="list-group list-group-flush">
-  <li class="list-group-item text-center text-center">${employee.id}</li>
-  <a href= mailto:${employee.email} class="card-link text-center">${employee.email}</a>
+  <li class="list-group-item text-center text-center">ID: ${employee.id}</li>
+  <a href= mailto:${employee.email} class="card-link text-center">Email: ${employee.email}</a>
 
 </ul>
 <div class="card-body text-center">
  
-    <li class="list-group-item text-center text-center">${employee.school}</li>
+    <li class="list-group-item text-center text-center">School: ${employee.school}</li>
 </div>
 </div> 
 `;
@@ -48,15 +48,15 @@ console.log(employee);
 return`
 <div class="card mx-4 mt-4" id="managerCard"style="width: 18rem;">
 <div class="card-body our. text-bg-info mb-3">
-  <h5 class="card-title text-center fw-bold .fs-1">${employee.name}</h5>
+  <h5 class="card-title text-center fw-bold .fs-1">Name: ${employee.name}</h5>
   <p class="card-text text-center .fs-2 bi bi-diagram-3">Manager</p>
 </div>
 <ul class="list-group list-group-flush">
-  <li class="list-group-item text-center text-center">${employee.id}</li>
-  <a href="mailto:${employee.email}" class="card-link text-center">${employee.email}</a>
+  <li class="list-group-item text-center text-center">ID: ${employee.id}</li>
+  <a href="mailto:${employee.email}" class="card-link text-center">Email: ${employee.email}</a>
 
 </ul>
-<div class="list-group-item text-center">${employee.officeNumber}</li>
+<div class="list-group-item text-center">Office: ${employee.officeNumber}</li>
  
 </div>
 </div>
