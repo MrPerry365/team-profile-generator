@@ -4,6 +4,8 @@
 
 ## Link to the Walkthrough of this project: "https://drive.google.com/file/d/1y8FKbPGeoMHjJynpT8xXT7OdJw_8LM7d/view"
 
+## Screenshot of the rendered HTML:
+### <img src="assets/screenShot.png">
   
 ## Badge: [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
 
